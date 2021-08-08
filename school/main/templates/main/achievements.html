@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+    Достижения
+{% endblock %}
+{% block content %}
+    <div class="flex-container">
+        {% for img_to_display in images %}
+            <div class="item-div">
+                <img class="flex-item" src="{{path_name}}{{ img_to_display }}" alt="Error">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

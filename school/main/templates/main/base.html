@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="{% static 'main/js/jquery-3.6.0.js'%}"></script>
+    <script src="{% static 'main/js/main.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+</head>
+<body>
+<header>
+    <div class="header_top">
+        <h3>Сайт учителя английского языка</h3>
+        <h1>Тарасовой Светланы Вадимовны</h1>
+    </div>
+    <div class="header_bot">
+        <a class="menu" href="{% url 'home' %}">Главная</a>
+        <a class="menu" href="{% url 'parents' %}">Родителям</a>
+        <a class="menu" href="#">УМК</a>
+        <a class="menu" href="{% url 'students' %}">Ученикам</a>
+        <a class="menu" href="{% url 'files' %}">Учебные материалы</a>
+        <a class="menu" href="{% url 'achievements' %}">Достижения</a>
+        <a class="menu" href="{% url 'gallery' %}">Фотогалерея</a>
+    </div>
+</header>
+<main {% block main %}{% endblock %}>
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Главная
+{% endblock %}
+{% block content %}
+    <h3>
+        <a><b>На данной странице расположены доступные для скачивания учебно-методические материалы.</b></a>
+    </h3>
+    <table cellpadding="0" cellspacing="0" style="padding-left:5em;">
+        {% for filename in files_to_download %}
+        <tr>
+            <td>
+                <a href="{{path_name}}{{ filename }}" download>{{ filename }}</a><br>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
